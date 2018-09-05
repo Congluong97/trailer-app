@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    tools:context=".activity.DetailActivity"
+    >
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="#ffff"
+        android:id="@+id/appbar_detail">
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapSing_detail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:collapsedTitleTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse"
+            app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse"
+            app:expandedTitleMarginStart="72dp"
+            app:contentScrim="#263238"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed" >
+
+
+                <ImageView
+                    android:id="@+id/backdrop_path"
+                    android:scaleType="centerCrop"
+                    app:layout_collapseMode="parallax"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            <android.support.v7.widget.Toolbar
+
+                android:id="@+id/toolbar_detail"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:navigationIcon="@drawable/arrow_left"
+                app:contentInsetStart="72dp"
+                app:layout_collapseMode="pin">
+
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:background="#4f5b62">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view_thumbnail"
+                android:layout_width="400dp"
+                android:layout_height="340dp"
+                android:layout_gravity="center"
+                android:elevation="3dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                card_view:cardCornerRadius="@dimen/card_movie_radius">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#263238">
+                    <ImageView
+                        android:id="@+id/thumbnail"
+                        android:src="@color/colorAccent"
+                        android:layout_width="150dp"
+                        android:layout_height="200dp"
+                        android:scaleType="centerCrop"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/movie_title_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/thumbnail"
+                        android:layout_marginTop="10dp"
+                        android:text="Movie Title"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="#ffff"
+                        android:layout_marginLeft="15dp"
+                        />
+                    <TextView
+                        android:id="@+id/userrating_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="5dp"
+                        android:text="Userrating"
+                        android:textSize="15sp"
+                        android:layout_below="@+id/movie_title_detail"
+                        android:textColor="#f40101"
+                        android:layout_toRightOf="@+id/thumbnail"
+                        />
+                    <TextView
+                        android:id="@+id/releasedate_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Release Date"
+                        android:textSize="15sp"
+                        android:textColor="#ffff"
+                        android:layout_below="@id/userrating_detail"
+                        android:layout_toRightOf="@id/thumbnail"
+                        android:layout_marginLeft="15dp"
+                        />
+                    <com.github.ivbaranov.mfb.MaterialFavoriteButton
+                        android:id="@+id/material_favorite"
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
+                        android:layout_below="@id/releasedate_detail"
+                        android:layout_toRightOf="@id/thumbnail"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        app:mfb_type="heart"/>
+
+
+
+                        <android.support.v4.widget.NestedScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/thumbnail"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginBottom="5dp">
+                            <android.support.v7.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:elevation="3dp"
+                                card_view:cardCornerRadius="0dp">
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="#4f5b62">
+
+                                    <TextView
+                                        android:id="@+id/overview_detail"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="10dp"
+                                        android:text="OVerview"
+                                        android:padding="5dp"
+                                        android:textSize="15sp"
+                                        android:textColor="#ffff"
+                                        />
+                                </RelativeLayout>
+
+                            </android.support.v7.widget.CardView>
+
+                        </android.support.v4.widget.NestedScrollView>
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+            <LinearLayout
+                android:layout_margin="3dp"
+                android:id="@+id/layout_trailer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/card_view_thumbnail"
+                android:orientation="horizontal"
+                android:background="#263238">
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/unnamed"
+                    />
+
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:id="@+id/trailer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="Trailer"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#ffff"
+                    />
+            </LinearLayout>
+
+
+
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycleview_trailer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:scrollbars="vertical"
+                android:layout_below="@+id/layout_trailer"/>
+        </RelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+
+
+</android.support.design.widget.CoordinatorLayout>

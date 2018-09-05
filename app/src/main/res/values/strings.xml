@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">TrailerApp</string>
+    <string name="favorite">Favorite</string>
+    <string name="gallery">Gallery</string>
+    <string name="tools">Tools</string>
+    <string name="slideshow">SlideShow</string>
+    <string name="popular">Popular</string>
+    <string name="toprate">Top Rate</string>
+    <string name="upcoming">Up Comming</string>
+    <string name="nowplaying">Now Playing</string>
+    <string name="movie">Movie</string>
+    <string name="tv">TV</string>
+</resources>
